@@ -4,6 +4,7 @@ const diffArray = ["Easy", "Medium", "Hard"];
 const questionLimit = 10;
 let gameReady = false;
 let score = 0;
+let scoreContainer = document.getElementById("score-number");
 let currentQuestionSet = 0;
 const questionsArray = [];
 const questions = document.getElementById("question");
@@ -19,6 +20,8 @@ const fetchCategories = () => {
 };
 // Populate catagories
 // Populate difficulty
+
+
 const populateDropDowns = data => {
   console.log("Data in Dropdowns", data);
   const triviaCategories = data.trivia_categories;
@@ -111,6 +114,7 @@ const checkAnswer = selectedAnswerNumber => {
     console.log("Correct!");
     getNextQuestion("correct-answer", selectedAnswer);
     score++;
+    scoreContainer.innerText = score;
     // Increment score
     // Get new questions
   } else {
