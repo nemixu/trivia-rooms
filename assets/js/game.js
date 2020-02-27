@@ -99,7 +99,7 @@ const getNextQuestion = (className, selectedAnswer) => {
     selectedAnswer.classList.remove(className);
     currentQuestionSet++;
     setQuestionAndAnswers();
-  }, 2000);
+  }, 1000);
 };
 
 const checkAnswer = selectedAnswerNumber => {
@@ -110,8 +110,7 @@ const checkAnswer = selectedAnswerNumber => {
   ) {
     console.log("Correct!");
     getNextQuestion("correct-answer", selectedAnswer);
-
-    // Change button to green
+    score++;
     // Increment score
     // Get new questions
   } else {
@@ -132,7 +131,7 @@ const displayGame = () => {
   document.getElementById("score-counter").style.display = "block";
 };
 
-const tartGame = () => {
+const startGame = () => {
   score = 0;
   getQuestions();
   displayGame();
