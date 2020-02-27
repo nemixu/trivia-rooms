@@ -89,6 +89,11 @@ ul {
     color: aqua;
 }
 
+.answer-remove:hover {
+    background-color: aqua;
+    color: #ffffff;
+}
+
 #question {
     color: #ffffff;
     font-size: 1.5rem;
@@ -140,9 +145,10 @@ ul {
 .landing-footer {
     background-color: #292e2f;
 }
+
 .correct-answer {
     color: #ffffff;
-    background-color:#00FF00;
+    background-color: #00FF00;
 }
 
 .wrong-answer {
