@@ -115,15 +115,9 @@ const checkAnswer = selectedAnswerNumber => {
     getNextQuestion("correct-answer", selectedAnswer);
     score++;
     scoreContainer.innerText = score;
-    // Increment score
-    // Get new questions
   } else {
     console.log("Incorrect!");
     getNextQuestion("wrong-answer", selectedAnswer);
-
-    // Change button to red
-    // Don't increment score
-    // Pull new set of questions
   }
 };
 
