@@ -81,10 +81,10 @@ ul {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
-.answer:hover {
+/* .answer:hover {
   background-color: #ffffff;
   color: aqua;
-}
+} */
 
 #question {
   color: #ffffff;
@@ -106,7 +106,7 @@ ul {
 }
 
 #play-again-buttons {
-  display: block;
+  display: none;
 }
 
 #score-counter {
