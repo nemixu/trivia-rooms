@@ -6,10 +6,13 @@ let gameReady = false;
 let score = 0;
 let scoreContainer = document.getElementById("score-number");
 let currentQuestionSet = 0;
-const questionsArray = [];
+let questionsArray = [];
+let questionCounter = 0;
 const questions = document.getElementById("question");
 const answers = Array.from(document.getElementsByClassName("answer"));
 const unwantedCategories = [13, 19, 24, 25, 29, 30];
+const maxQuestions = 10;
+
 const fetchCategories = () => {
   fetch("https://opentdb.com/api_category.php")
     .then(result => result.json())
@@ -59,7 +62,6 @@ const shuffle = array => {
 const getQuestions = () => {
   const categoryDropDown = $("#categories")[0].value;
   const difficultyDropDown = $("#difficulty")[0].value;
-
   const url = `https://opentdb.com/api.php?amount=10&category=${categoryDropDown}&difficulty=${difficultyDropDown}&type=multiple`;
   gameReady = true;
 
@@ -94,6 +96,8 @@ const setQuestionAndAnswers = () => {
     answer.innerText = shuffleArr[index - 1];
   });
   console.log("ALL ANSWERS", allAnswers);
+  questionCounter++
+  console.log("questions counter", questionCounter);
 };
 
 const getNextQuestion = (className, selectedAnswer) => {
@@ -119,6 +123,9 @@ const checkAnswer = selectedAnswerNumber => {
     console.log("Incorrect!");
     getNextQuestion("wrong-answer", selectedAnswer);
   }
+  if (questionCounter >= maxQuestions) {
+    return window.location.assign("/index.html");
+  }
 };
 
 const displayGame = () => {
@@ -127,8 +134,12 @@ const displayGame = () => {
   document.getElementById("dropdown-boxes").style.display = "none";
   document.getElementById("footer-main").style.display = "none";
   document.getElementById("score-counter").style.display = "block";
-  document.getElementById("play-again-buttons").style.display = "block";
+
 };
+
+const endGame = () => {
+  document.getElementById("play-again-buttons").style.display = "block";
+}
 
 const startGame = () => {
   score = 0;
@@ -136,5 +147,12 @@ const startGame = () => {
   displayGame();
 };
 
+
+const replayGame = () => {
+  score = 0;
+  questionsArray = [];
+  getQuestions();
+  displayGame();
+}
 
 fetchCategories();
