@@ -88,11 +88,6 @@ ul {
   color: aqua;
 }
 
-.answer-remove:hover {
-  background-color: aqua;
-  color: #ffffff;
-}
-
 #question {
   color: #ffffff;
   font-size: 1.5rem;

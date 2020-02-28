@@ -2,7 +2,9 @@
 Interactive-frontend-project
 
 My project will be a trivia style Interactive site that is focused with the mobile first approach.
-The game will target 5 categories with multiple questions that are pulled from an API.
+The game will target a list of categories with multiple questions that are pulled from an API.
+The user can choose from 3 difficulties and play the game for the duration of the 10 questions.
+I have opted to not have a timer as I want the game to be enjoyable for the user and take their time whilst playing.
 
  
 ## UX
@@ -34,11 +36,11 @@ In addition, you may also use this section to discuss plans for additional featu
 - HTML5
 - CSS3
 - Bootstrap v4.3.1
-- ES6 JavaScript
+- ES6+ JavaScript
 - Google Chrome Dev tools for debugging
 - Google Light house for audits
-- vsCode - to beautify code (gitpod not formatting)
-- [JQuery](https://jquery.com) The project uses **JQuery** to simplify DOM manipulation.
+- vsCode as IDE
+- JQuery
 
 ## Testing
 
@@ -65,18 +67,16 @@ If this section grows too long, you may want to split it off into a separate fil
 ## Bugs and problems
 
 - API BUG -
-Issue with the api that has been identified - some of the results from the api come back with no objects this is due to the api not having questions for the specific topics, to overcome this I will be removing the topics that come back with no data from the array so the user experience is continued.
+Issue with the api that has been identified - some of the results from the api come back with no objects inside the array this is due to the api not having questions for the specific topics, to overcome this I will be removing the topics that come back with no data from the array so the user experience is continued.
 Below is the topics from the api that are currently showing results of [];
 
-1. [4]Entertainment : musicals & Theatres
-2. [10]Science: Mathematics
-3. [24]Politics
-4. [25]Art
+The category ID's which have been removed are listed below
+[13, 19, 24, 25, 29, 30]
 
 - Url fetch issue
 Changing the parameter of my const URL was showing issues in the debugging process - I was using google chrome tools for debugging, I began using the breakpoints to pause the action of a function to ensure things were running correctly - I found I was getting a failed promise from the api response as the URL details were incorrect - only after debugging and spending time trying to resolve the issue proved that the spelling of one word was incorrect, once this was changed the api began pulling the information correctly once again.
 
-- Issue with removing 4 empty objects from the array at categoryDropDown.append - this was proven to be an issue to write clean code without having four if statements. I wanted to try and have the cleanest solution possible for this problem. The solution I currently have removes one of the objects from the array that has empty data from the api.
+- Issue with removing 6 empty objects from the array at categoryDropDown.append - this was proven to be an issue to write clean code without having four if statements. I wanted to try and have the cleanest solution possible for this problem. The .includes method was the best solution and provided clean code and more readable for someone reading.
 
 - Issues without shuffle it would always put the same answer down on the answer area, I adopted Fisher-Yates Shuffle algorithm to resolve this and it now randomizes
 
