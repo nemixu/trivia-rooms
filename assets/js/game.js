@@ -127,6 +127,7 @@ const displayGame = () => {
   document.getElementById("dropdown-boxes").style.display = "none";
   document.getElementById("footer-main").style.display = "none";
   document.getElementById("score-counter").style.display = "block";
+  document.getElementById("play-again-buttons").style.display = "block";
 };
 
 const startGame = () => {
@@ -134,5 +135,6 @@ const startGame = () => {
   getQuestions();
   displayGame();
 };
+
 
 fetchCategories();

@@ -41,8 +41,7 @@ ul {
   text-shadow: 0px 3px 3px #e9ecef6b;
 }
 
-#dropdown {
-}
+#dropdown {}
 
 .form-boxes {
   width: 400px;
@@ -54,8 +53,7 @@ ul {
   text-shadow: 0px 3px 3px #e9ecef6b;
 }
 
-.instructions-head {
-}
+.instructions-head {}
 
 #instructions {
   color: #ffffff;
@@ -104,6 +102,10 @@ ul {
 }
 
 #dropdown-boxes {
+  display: block;
+}
+
+#play-again-buttons {
   display: block;
 }
 
