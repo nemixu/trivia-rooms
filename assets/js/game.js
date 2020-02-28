@@ -1,7 +1,6 @@
 const categoryDropDown = $("#categories");
 const difficultyDropDown = $("#difficulty");
 const diffArray = ["Easy", "Medium", "Hard"];
-const questionLimit = 10;
 let gameReady = false;
 let score = 0;
 let scoreContainer = document.getElementById("score-number");
@@ -93,7 +92,7 @@ const setQuestionAndAnswers = () => {
   let index = 0;
   answers.forEach(answer => {
     index++;
-    answer.innerText = shuffleArr[index - 1];
+    answer.innerHTML = shuffleArr[index - 1];
   });
   console.log("ALL ANSWERS", allAnswers);
   questionCounter++
