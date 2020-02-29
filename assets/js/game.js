@@ -11,7 +11,6 @@ const answers = Array.from(document.getElementsByClassName("answer"));
 const unwantedCategories = [13, 19, 24, 25, 29, 30];
 const maxQuestions = 10;
 
-
 const fetchCategories = () => {
   fetch("https://opentdb.com/api_category.php")
     .then(result => result.json())
@@ -58,16 +57,17 @@ const shuffle = array => {
 };
 
 const getElementsByString = (str, tag) => {
-
   console.log(str);
-  console.log(str.replace(/[^\d\w\są-ż]+/g, ''));
-  return Array.prototype.slice.call(document.getElementsByTagName(tag)).filter(el => el.textContent.trim() === str.trim());
-}
+  console.log(str.replace(/[^\d\w\są-ż]+/g, ""));
+  return Array.prototype.slice
+    .call(document.getElementsByTagName(tag))
+    .filter(el => el.textContent.trim() === str.trim());
+};
 
 const setScore = newScore => {
   score = newScore;
   document.getElementById("score-number").innerHTML = newScore;
-}
+};
 
 const getQuestions = () => {
   const categoryDropDown = $("#categories")[0].value;
@@ -110,9 +110,11 @@ const setQuestionAndAnswers = () => {
 };
 
 const getNextQuestion = (className, selectedAnswer, currentCorrectAnswer) => {
-
   if (questionCounter < maxQuestions) {
-    const correctAnswer = getElementsByString(currentCorrectAnswer, "button")[0];
+    const correctAnswer = getElementsByString(
+      currentCorrectAnswer,
+      "button"
+    )[0];
     selectedAnswer.classList.add(className);
     if (correctAnswer && className !== "correct-answer") {
       correctAnswer.classList.add("correct-answer");
@@ -124,16 +126,15 @@ const getNextQuestion = (className, selectedAnswer, currentCorrectAnswer) => {
       currentQuestionSet++;
       setQuestionAndAnswers();
     }, 1000);
-
   } else {
     console.log("ending game");
     endGame();
   }
-
 };
 
 const checkAnswer = selectedAnswerNumber => {
-  const currentCorrectAnswer = questionsArray[currentQuestionSet].correct_answer;
+  const currentCorrectAnswer =
+    questionsArray[currentQuestionSet].correct_answer;
   const selectedAnswer = $(`[data-number=${selectedAnswerNumber}]`)[0];
   if (selectedAnswer.innerHTML === currentCorrectAnswer) {
     console.log("Correct!");
@@ -145,7 +146,6 @@ const checkAnswer = selectedAnswerNumber => {
     console.log("Incorrect!");
     getNextQuestion("wrong-answer", selectedAnswer, currentCorrectAnswer);
   }
-
 };
 
 const startGame = () => {
