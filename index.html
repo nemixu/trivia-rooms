@@ -35,7 +35,7 @@
 
   <body>
     <!--Main landing image-->
-
+    <!--Instructions-->
     <section id="opening-game">
       <div class="container-fluid">
         <div
@@ -69,6 +69,7 @@
         </div>
       </div>
     </section>
+
     <!--Form selection added for choice of category and difficulty-->
     <section id="dropdown-boxes">
       <div
@@ -82,7 +83,6 @@
             <select class="form-control dropdown" id="difficulty">
               <option>Choose a Difficulty</option>
             </select>
-            <!-- <select class="form-control dropdown" id="questions"><option>Number of Questions</option></select> -->
             <div class="col-12">
               <button
                 type="button"
@@ -97,6 +97,7 @@
         </div>
       </div>
     </section>
+    <!-- Score Counter -->
     <section id="score-counter">
       <div class="container">
         <div class="row">
@@ -116,28 +117,39 @@
             <h1 id="question">What is the question?</h1>
           </div>
           <div class="col-12 col-md-6">
-            <p onclick="checkAnswer(1)" class="answer" data-number="1">
+            <button onclick="checkAnswer(1)" class="answer" data-number="1">
               Sample 1
-            </p>
+            </button>
           </div>
           <div class="col-12 col-md-6">
-            <p onclick="checkAnswer(2)" class="answer" data-number="2">
+            <button onclick="checkAnswer(2)" class="answer" data-number="2">
               Sample 2
-            </p>
+            </button>
           </div>
           <div class="col-12 col-md-6">
-            <p onclick="checkAnswer(3)" class="answer" data-number="3">
+            <button onclick="checkAnswer(3)" class="answer" data-number="3">
               Sample 3
-            </p>
+            </button>
           </div>
           <div class="col-12 col-md-6">
-            <p onclick="checkAnswer(4)" class="answer" data-number="4">
+            <button onclick="checkAnswer(4)" class="answer" data-number="4">
               Sample 4
-            </p>
+            </button>
           </div>
         </div>
       </div>
     </section>
+    <!-- End of Score container-->
+    <section id="end-game-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h2 id="congrats-text">congrats</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Game Buttons to replay or get a new quizz-->
     <section
       class="align-items-center justify-content-center text-center"
       id="play-again-buttons"
@@ -200,6 +212,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/game.js"></script>
-  </body>
+    <script src="assets/js/game.js" charset="UTF-8"></script>
 </html>
