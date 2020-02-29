@@ -3,7 +3,6 @@ const difficultyDropDown = $("#difficulty");
 const diffArray = ["Easy", "Medium", "Hard"];
 let gameReady = false;
 let score = 0;
-let scoreContainer = document.getElementById("score-number");
 let currentQuestionSet = 0;
 let questionsArray = [];
 let questionCounter = 0;
@@ -11,6 +10,7 @@ const questions = document.getElementById("question");
 const answers = Array.from(document.getElementsByClassName("answer"));
 const unwantedCategories = [13, 19, 24, 25, 29, 30];
 const maxQuestions = 10;
+
 
 const fetchCategories = () => {
   fetch("https://opentdb.com/api_category.php")
@@ -22,7 +22,6 @@ const fetchCategories = () => {
 };
 // Populate catagories
 // Populate difficulty
-
 
 const populateDropDowns = data => {
   console.log("Data in Dropdowns", data);
@@ -58,12 +57,23 @@ const shuffle = array => {
   return array;
 };
 
+const getElementsByString = (str, tag) => {
+
+  console.log(str);
+  console.log(str.replace(/[^\d\w\są-ż]+/g, ''));
+  return Array.prototype.slice.call(document.getElementsByTagName(tag)).filter(el => el.textContent.trim() === str.trim());
+}
+
+const setScore = newScore => {
+  score = newScore;
+  document.getElementById("score-number").innerHTML = newScore;
+}
+
 const getQuestions = () => {
   const categoryDropDown = $("#categories")[0].value;
   const difficultyDropDown = $("#difficulty")[0].value;
   const url = `https://opentdb.com/api.php?amount=10&category=${categoryDropDown}&difficulty=${difficultyDropDown}&type=multiple`;
   gameReady = true;
-
   fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -86,7 +96,7 @@ const setQuestionAndAnswers = () => {
     questionsArray[currentQuestionSet].correct_answer,
     ...questionsArray[currentQuestionSet].incorrect_answers
   ];
-
+  currentCorrectAnswer = questionsArray[currentQuestionSet].correct_answer;
   // shuffle array
   const shuffleArr = shuffle(allAnswers);
   let index = 0;
@@ -95,36 +105,61 @@ const setQuestionAndAnswers = () => {
     answer.innerHTML = shuffleArr[index - 1];
   });
   console.log("ALL ANSWERS", allAnswers);
-  questionCounter++
+  questionCounter++;
   console.log("questions counter", questionCounter);
 };
 
-const getNextQuestion = (className, selectedAnswer) => {
-  selectedAnswer.classList.add(className);
-  setTimeout(() => {
-    selectedAnswer.classList.remove(className);
-    currentQuestionSet++;
-    setQuestionAndAnswers();
-  }, 1000);
+const getNextQuestion = (className, selectedAnswer, currentCorrectAnswer) => {
+
+  if (questionCounter < maxQuestions) {
+    const correctAnswer = getElementsByString(currentCorrectAnswer, "button")[0];
+    selectedAnswer.classList.add(className);
+    if (correctAnswer && className !== "correct-answer") {
+      correctAnswer.classList.add("correct-answer");
+    }
+    selectedAnswer.classList.add(className);
+    setTimeout(() => {
+      selectedAnswer.classList.remove(className);
+      correctAnswer.classList.remove("correct-answer");
+      currentQuestionSet++;
+      setQuestionAndAnswers();
+    }, 1000);
+
+  } else {
+    console.log("ending game");
+    endGame();
+  }
+
 };
 
 const checkAnswer = selectedAnswerNumber => {
+  const currentCorrectAnswer = questionsArray[currentQuestionSet].correct_answer;
   const selectedAnswer = $(`[data-number=${selectedAnswerNumber}]`)[0];
-  if (
-    selectedAnswer.innerHTML ===
-    questionsArray[currentQuestionSet].correct_answer
-  ) {
+  if (selectedAnswer.innerHTML === currentCorrectAnswer) {
     console.log("Correct!");
-    getNextQuestion("correct-answer", selectedAnswer);
-    score++;
-    scoreContainer.innerText = score;
+    console.log("this is the score", score);
+    score += 1;
+    setScore(score);
+    getNextQuestion("correct-answer", selectedAnswer, currentCorrectAnswer);
   } else {
     console.log("Incorrect!");
-    getNextQuestion("wrong-answer", selectedAnswer);
+    getNextQuestion("wrong-answer", selectedAnswer, currentCorrectAnswer);
   }
-  if (questionCounter >= maxQuestions) {
-    return window.location.assign("/index.html");
-  }
+
+};
+
+const startGame = () => {
+  setScore(0);
+  questionCounter = 0;
+  currentQuestionSet = 0;
+  getQuestions();
+  displayGame();
+};
+
+const replayGame = () => {
+  setScore(0);
+  questionsArray = [];
+  startGame();
 };
 
 const displayGame = () => {
@@ -133,25 +168,13 @@ const displayGame = () => {
   document.getElementById("dropdown-boxes").style.display = "none";
   document.getElementById("footer-main").style.display = "none";
   document.getElementById("score-counter").style.display = "block";
-
 };
 
 const endGame = () => {
   document.getElementById("play-again-buttons").style.display = "block";
-}
-
-const startGame = () => {
-  score = 0;
-  getQuestions();
-  displayGame();
+  document.getElementById("questions-main").style.display = "none";
+  document.getElementById("end-game-container").style.display = "block";
+  document.getElementById("score-counter").style.display = "block";
 };
-
-
-const replayGame = () => {
-  score = 0;
-  questionsArray = [];
-  getQuestions();
-  displayGame();
-}
 
 fetchCategories();
