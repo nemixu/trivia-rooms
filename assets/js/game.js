@@ -6,6 +6,7 @@ let score = 0;
 let currentQuestionSet = 0;
 let questionsArray = [];
 let questionCounter = 0;
+const realAnswer = document.getElementById("real-answer");
 const questions = document.getElementById("question");
 const answers = Array.from(document.getElementsByClassName("answer"));
 const unwantedCategories = [13, 19, 24, 25, 29, 30];
@@ -57,8 +58,8 @@ const shuffle = array => {
 };
 
 const getElementsByString = (str, tag) => {
-  console.log(str);
-  console.log(str.replace(/[^\d\w\są-ż]+/g, ""));
+  // let enc_str = encodeURIComponent(str);
+  // console.log(decodeURI(enc_str));
   return Array.prototype.slice
     .call(document.getElementsByTagName(tag))
     .filter(el => el.textContent.trim() === str.trim());
@@ -90,13 +91,12 @@ const setQuestionAndAnswers = () => {
   // Set the question html
   questions.innerHTML = questionsArray[currentQuestionSet].question;
   console.log("Current Question", questionsArray[currentQuestionSet].question);
-
   // combine all answers to display later
   const allAnswers = [
     questionsArray[currentQuestionSet].correct_answer,
     ...questionsArray[currentQuestionSet].incorrect_answers
   ];
-  currentCorrectAnswer = questionsArray[currentQuestionSet].correct_answer;
+  realAnswer.innerHTML = questionsArray[currentQuestionSet].correct_answer;
   // shuffle array
   const shuffleArr = shuffle(allAnswers);
   let index = 0;
@@ -108,43 +108,48 @@ const setQuestionAndAnswers = () => {
   questionCounter++;
   console.log("questions counter", questionCounter);
 };
+const addClasses = (className, selectedAnswer, correctAnswer) => {
+  selectedAnswer.classList.add(className);
+  if (correctAnswer && className !== "correct-answer") {
+    correctAnswer.classList.add("correct-answer");
+  }
+  selectedAnswer.classList.add(className);
+};
+const removeClasses = (className, selectedAnswer, correctAnswer) => {
+  selectedAnswer.classList.remove(className);
+  correctAnswer.classList.remove("correct-answer");
+};
 
-const getNextQuestion = (className, selectedAnswer, currentCorrectAnswer) => {
+const getNextQuestion = (className, selectedAnswer) => {
+  const correctAnswer = getElementsByString(realAnswer.innerText, "button")[0];
   if (questionCounter < maxQuestions) {
-    const correctAnswer = getElementsByString(
-      currentCorrectAnswer,
-      "button"
-    )[0];
-    selectedAnswer.classList.add(className);
-    if (correctAnswer && className !== "correct-answer") {
-      correctAnswer.classList.add("correct-answer");
-    }
-    selectedAnswer.classList.add(className);
+    addClasses(className, selectedAnswer, correctAnswer);
     setTimeout(() => {
-      selectedAnswer.classList.remove(className);
-      correctAnswer.classList.remove("correct-answer");
+      removeClasses(className, selectedAnswer, correctAnswer);
       currentQuestionSet++;
       setQuestionAndAnswers();
     }, 1000);
   } else {
-    console.log("ending game");
-    endGame();
+    addClasses(className, selectedAnswer, correctAnswer);
+    setTimeout(() => {
+      console.log("ending game");
+      removeClasses(className, selectedAnswer, correctAnswer);
+      endGame();
+    }, 2000);
   }
 };
 
 const checkAnswer = selectedAnswerNumber => {
-  const currentCorrectAnswer =
-    questionsArray[currentQuestionSet].correct_answer;
   const selectedAnswer = $(`[data-number=${selectedAnswerNumber}]`)[0];
-  if (selectedAnswer.innerHTML === currentCorrectAnswer) {
+  if (selectedAnswer.innerText === realAnswer.innerText) {
     console.log("Correct!");
     console.log("this is the score", score);
     score += 1;
     setScore(score);
-    getNextQuestion("correct-answer", selectedAnswer, currentCorrectAnswer);
+    getNextQuestion("correct-answer", selectedAnswer);
   } else {
     console.log("Incorrect!");
-    getNextQuestion("wrong-answer", selectedAnswer, currentCorrectAnswer);
+    getNextQuestion("wrong-answer", selectedAnswer);
   }
 };
 
