@@ -3,7 +3,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  background: url(../images/grad.jpg) no-repeat center 75%;
+  background: url(../images/bbgd.jpg) no-repeat center 75%;
 }
 
 ul {
@@ -30,18 +30,28 @@ ul {
 /*--Landing page text--*/
 
 #landing-text {
+  padding-top: 150px;
   color: #ffffff;
   font-size: 4rem;
-  text-shadow: 0px 3px 3px #e9ecef6b;
+
 }
 
 #landing-sub {
+  padding: 20px 20px;
   color: #ffffff;
   font-size: 2rem;
-  text-shadow: 0px 3px 3px #e9ecef6b;
+
 }
 
 #dropdown {}
+
+#categories {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden !important;
+  overflow: scroll !important;
+
+}
 
 .form-boxes {
   width: 400px;
@@ -50,7 +60,7 @@ ul {
 /*--Instructions Text--*/
 .underline {
   text-decoration: underline;
-  text-shadow: 0px 3px 3px #e9ecef6b;
+
 }
 
 .instructions-head {}
@@ -58,14 +68,14 @@ ul {
 #instructions {
   color: #ffffff;
   font-size: 1.2rem;
-  text-shadow: 0px 3px 3px #e9ecef6b;
+
 }
 
 .instructions-list-text {
   color: #ffffff;
   font-size: 1.2rem;
   list-style-type: none;
-  text-shadow: 0px 3px 3px #e9ecef6b;
+
 }
 
 /*--Game Page text--*/
@@ -107,11 +117,12 @@ ul {
 
 #play-again-buttons {
   display: block;
+  padding-top: 300px;
 }
 
 #end-game-container {
   color: #ffffff;
-  display:block;
+  display: block;
 }
 
 #score-counter {

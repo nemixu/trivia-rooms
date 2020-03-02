@@ -127,6 +127,7 @@ const getNextQuestion = (className, selectedAnswer) => {
     setTimeout(() => {
       removeClasses(className, selectedAnswer, correctAnswer);
       currentQuestionSet++;
+
       setQuestionAndAnswers();
     }, 1000);
   } else {
