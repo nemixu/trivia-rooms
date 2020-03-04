@@ -3,7 +3,9 @@
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  background: url(../images/bbgd.jpg) no-repeat center 75%;
+  background: url(../images/grad.jpg) no-repeat center 75%;
+  background-size: cover;
+  height: 120vh;
 }
 
 ul {
@@ -30,27 +32,26 @@ ul {
 /*--Landing page text--*/
 
 #landing-text {
-  padding-top: 150px;
+  padding-top: 40px;
   color: #ffffff;
-  font-size: 4rem;
-
+  font-size: 2rem;
 }
 
 #landing-sub {
   padding: 20px 20px;
   color: #ffffff;
-  font-size: 2rem;
-
+  font-size: 1rem;
 }
 
-#dropdown {}
+.dropdown {
+  width: 350px;
+}
 
 #categories {
   height: auto;
-  max-height: 200px;
   overflow-x: hidden !important;
   overflow: scroll !important;
-
+  margin-bottom: 10px;
 }
 
 .form-boxes {
@@ -60,33 +61,32 @@ ul {
 /*--Instructions Text--*/
 .underline {
   text-decoration: underline;
-
 }
 
-.instructions-head {}
+.instructions-head {
+}
 
 #instructions {
   color: #ffffff;
-  font-size: 1.2rem;
-
+  font-size: 1rem;
 }
 
 .instructions-list-text {
   color: #ffffff;
-  font-size: 1.2rem;
+  font-size: 1rem;
   list-style-type: none;
-
 }
 
 /*--Game Page text--*/
 
 .answer {
-  color: #ffffff;
-  font-size: 1.5rem;
-  background-color: aqua;
+  color: #000000;
+  font-size: 1rem;
+  background-color: #ffffff;
   height: 100px;
-  padding: 30px;
-  border-radius: 50px;
+  width: 300px;
+  margin: 2px;
+  border-radius: 35px;
   cursor: pointer;
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
 }
@@ -98,13 +98,12 @@ ul {
 
 #question {
   color: #ffffff;
-  font-size: 1.5rem;
-  padding: 40px;
+  font-size: 1.1rem;
+  padding: 40px 40px 5px 40px;
 }
 
 #questions-main {
   display: none;
-  padding-top: 120px;
 }
 
 #opening-game {
@@ -115,9 +114,21 @@ ul {
   display: block;
 }
 
+#playAgain {
+  margin-top: 10px;
+}
+
 #play-again-buttons {
-  display: block;
-  padding-top: 300px;
+  display: none;
+  padding-top: 50px;
+}
+
+.button-style {
+  color: #000000;
+}
+
+.button-style a {
+  color: #000000 !important;
 }
 
 #end-game-container {
@@ -125,14 +136,26 @@ ul {
   display: block;
 }
 
+#congrats-text {
+  display: none;
+  text-align: center;
+  padding-top: 200px;
+  font-size: 1.5rem;
+}
+
 #score-counter {
   color: #ffffff;
-  float: right;
+  text-align: center;
   display: none;
+  padding-top: 20px;
 }
 
 #score-number {
-  font-size: 23px;
+  font-size: 1rem;
+}
+
+.score-text {
+  font-size: 1rem;
 }
 
 /*--Footer Icons--*/
@@ -145,6 +168,20 @@ ul {
   color: #ffffff;
   padding-right: 10px;
   padding-top: 20px;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+}
+
+.github:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
 }
 
 .slack {
@@ -152,6 +189,21 @@ ul {
   color: #ffffff;
   padding-right: 10px;
   padding-top: 20px;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+}
+
+.slack:hover {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  
 }
 
 .landing-footer {
