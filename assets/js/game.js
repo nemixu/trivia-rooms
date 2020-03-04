@@ -166,6 +166,8 @@ const replayGame = () => {
   setScore(0);
   questionsArray = [];
   startGame();
+  document.getElementById("congrats-text").style.display = "none";
+  document.getElementById("play-again-buttons").style.display = "none";
 };
 
 const displayGame = () => {
@@ -180,7 +182,12 @@ const endGame = () => {
   document.getElementById("play-again-buttons").style.display = "block";
   document.getElementById("questions-main").style.display = "none";
   document.getElementById("end-game-container").style.display = "block";
-  document.getElementById("score-counter").style.display = "block";
+  document.getElementById("score-counter").style.display = "none";
+  document.getElementById("congrats-text").style.display = "block";
+  let finalScoreText = `Congratulations your final score was ${score}/10`;
+  console.log(finalScoreText);
+  document.getElementById("congrats-text").innerHTML = finalScoreText;
+
 };
 
 fetchCategories();
