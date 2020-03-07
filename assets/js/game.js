@@ -6,11 +6,13 @@ let score = 0;
 let currentQuestionSet = 0;
 let questionsArray = [];
 let questionCounter = 0;
+let buttonOnClick = $(".button-click");
 const realAnswer = document.getElementById("real-answer");
 const questions = document.getElementById("question");
 const answers = Array.from(document.getElementsByClassName("answer"));
 const unwantedCategories = [13, 19, 24, 25, 29, 30];
 const maxQuestions = 10;
+
 
 const fetchCategories = () => {
   fetch("https://opentdb.com/api_category.php")
@@ -87,6 +89,7 @@ const getQuestions = () => {
 };
 
 const setQuestionAndAnswers = () => {
+  $(buttonOnClick).prop('disabled', false);
   console.log("Questions array ", questionsArray);
   // Set the question html
   questions.innerHTML = questionsArray[currentQuestionSet].question;
@@ -114,6 +117,7 @@ const addClasses = (className, selectedAnswer, correctAnswer) => {
     correctAnswer.classList.add("correct-answer");
   }
   selectedAnswer.classList.add(className);
+  $(buttonOnClick).prop('disabled', true);
 };
 const removeClasses = (className, selectedAnswer, correctAnswer) => {
   selectedAnswer.classList.remove(className);
@@ -127,7 +131,6 @@ const getNextQuestion = (className, selectedAnswer) => {
     setTimeout(() => {
       removeClasses(className, selectedAnswer, correctAnswer);
       currentQuestionSet++;
-
       setQuestionAndAnswers();
     }, 1000);
   } else {
@@ -148,6 +151,7 @@ const checkAnswer = selectedAnswerNumber => {
     score += 1;
     setScore(score);
     getNextQuestion("correct-answer", selectedAnswer);
+
   } else {
     console.log("Incorrect!");
     getNextQuestion("wrong-answer", selectedAnswer);
