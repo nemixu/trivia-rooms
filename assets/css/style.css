@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat:,300,400,500,");
+@import url("https://fonts.googleapis.com/css?family=Roboto:,300,400,500,");
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
   background: url(../images/grad.jpg) no-repeat center 75%;
   background-size: cover;
-  height: 120vh;
+  height: 100vh;
 }
 
 ul {
@@ -33,11 +33,13 @@ ul {
 
 #landing-text {
   padding-top: 40px;
-  color: #ffffff;
+  font-weight: 300;
+  color: #2fb9c4;
   font-size: 2rem;
 }
 
 #landing-sub {
+  font-weight: 300;
   padding: 20px 20px;
   color: #ffffff;
   font-size: 1rem;
@@ -63,17 +65,16 @@ ul {
   text-decoration: underline;
 }
 
-.instructions-head {
-}
-
 #instructions {
   color: #ffffff;
+  font-weight: 300;
   font-size: 1rem;
 }
 
 .instructions-list-text {
   color: #ffffff;
   font-size: 1rem;
+  font-weight: 300;
   list-style-type: none;
 }
 
@@ -83,8 +84,8 @@ ul {
   color: #000000;
   font-size: 1rem;
   background-color: #ffffff;
-  height: 100px;
-  width: 300px;
+  height: 70px;
+  width: 250px;
   margin: 2px;
   border-radius: 35px;
   cursor: pointer;
@@ -93,8 +94,9 @@ ul {
 
 #question {
   color: #ffffff;
+  font-weight: 300;
   font-size: 1.1rem;
-  padding: 40px 40px 5px 40px;
+  padding: 20px 40px 5px 40px;
 }
 
 #questions-main {
@@ -118,12 +120,15 @@ ul {
   padding-top: 50px;
 }
 
+
 .button-style {
   color: #000000;
+  margin: 5px;
 }
 
 .button-style a {
   color: #000000 !important;
+  text-decoration: none !important;
 }
 
 #end-game-container {
@@ -133,6 +138,7 @@ ul {
 
 #congrats-text {
   display: none;
+  font-weight: 300;
   text-align: center;
   padding-top: 200px;
   font-size: 1.5rem;
@@ -177,6 +183,7 @@ ul {
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);
   -o-transform: rotate(360deg);
+  color:#2fb9c4;
 }
 
 .slack {
@@ -198,6 +205,7 @@ ul {
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);
   -o-transform: rotate(360deg);
+  color:#2fb9c4;
 }
 
 .landing-footer {
@@ -211,5 +219,94 @@ ul {
 
 .wrong-answer {
   color: #ffffff;
-  background-color: red;
+  background-color: #ff0000;
+}
+
+
+@media screen and (min-width:560px) {
+  .answer {
+    font-size: 1rem;
+    height: 150px;
+    width: 250px;
+    margin-top: 25px
+  }
+
+  #question {
+    font-size: 1.3rem;
+    padding: 200px 40px 20px 40px;
+  }
+  
+  #congrats-text {
+    padding-top: 400px;
+    font-size: 1.7rem;
+  }
+
+}
+
+
+@media screen and (min-width:768px) {
+  #question {
+    font-size: 1.3rem;
+    padding: 200px 40px 20px 40px;
+  }
+
+  #congrats-text {
+    padding-top: 400px;
+    font-size: 1.7rem;
+  }
+
+}
+
+@media screen and (min-width:1280px) {
+  #landing-text {
+    font-size: 3rem;
+  }
+  
+  #landing-sub{
+    font-size: 1.3rem;
+  }
+  #instructions {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+  .instructions-list-text {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 300;
+    list-style-type: none;
+  }
+
+  #question {
+    font-size: 2.3rem;
+    padding: 150px 40px 40px;
+    font-weight: 300;
+  }
+
+  .answer {
+    font-size: 1.3rem;
+    font-weight: 300;
+    height: 150px;
+    width: 350px;
+    margin-top: 25px
+  }
+
+  #congrats-text {
+    padding-top: 400px;
+    font-size: 2.3rem;
+    font-weight: 300;
+  }
+
+  #score-counter {
+    padding-top: 50px;
+  }
+
+  .score-text {
+    font-size: 2rem;
+  }
+
+  #score-number {
+    font-size: 2rem;
+  }
 }

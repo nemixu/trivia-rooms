@@ -111,6 +111,7 @@ const setQuestionAndAnswers = () => {
   questionCounter++;
   console.log("questions counter", questionCounter);
 };
+
 const addClasses = (className, selectedAnswer, correctAnswer) => {
   selectedAnswer.classList.add(className);
   if (correctAnswer && className !== "correct-answer") {
@@ -119,6 +120,7 @@ const addClasses = (className, selectedAnswer, correctAnswer) => {
   selectedAnswer.classList.add(className);
   $(buttonOnClick).prop('disabled', true);
 };
+
 const removeClasses = (className, selectedAnswer, correctAnswer) => {
   selectedAnswer.classList.remove(className);
   correctAnswer.classList.remove("correct-answer");
