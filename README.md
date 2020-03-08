@@ -140,9 +140,10 @@ The Original project will show the early stages of the project and the second co
 Apologies for how messy this section is but I wanted to ensure you seen the original commits from the start.
 
 Here is the original repository:
-[Original project](https://github.com/nemixu/Milestone-2)
+[Original project](https://github.com/nemixu/Milestone-2),
+
 Here is link to the set of commits added before overwriting it with a push from my local machine
-[Second Commit list](https://github.com/nemixu/trivia-rooms/commits/d8daa825b5e8c69ab79b5d1110ab4067d7f5808d)
+[Second Commit list](https://github.com/nemixu/trivia-rooms/commits/d8daa825b5e8c69ab79b5d1110ab4067d7f5808d),
 
 ### Implementation
 
@@ -232,11 +233,10 @@ To clone or run this project locally:
 3. In your local IDE open git bash.
 4. Change the current working directory to the location where you want the cloned directory to be made.
 5. Type git clone, and then paste the URL you coppiein step 2.
- git clone https://github.com/nemixu/trivia-rooms.git
- 6. Press Enter. Your local clone will be created.
+   git clone https://github.com/nemixu/trivia-rooms.git
+6. Press Enter. Your local clone will be created.
 
- Additionally if you have issues cloning this repo follow this link [Help with cloing a repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
-
+Additionally if you have issues cloning this repo follow this link [Help with cloing a repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
 
 ## Credits
 
