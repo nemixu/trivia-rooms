@@ -22,8 +22,6 @@ const fetchCategories = () => {
     })
     .catch(error => console.error(error.message));
 };
-// Populate catagories
-// Populate difficulty
 
 const populateDropDowns = data => {
   console.log("Data in Dropdowns", data);
@@ -141,7 +139,7 @@ const getNextQuestion = (className, selectedAnswer) => {
       console.log("ending game");
       removeClasses(className, selectedAnswer, correctAnswer);
       endGame();
-    }, 2000);
+    }, 1500);
   }
 };
 
@@ -164,8 +162,17 @@ const startGame = () => {
   setScore(0);
   questionCounter = 0;
   currentQuestionSet = 0;
+  document.querySelector('.main').classList.add('spinner');
   getQuestions();
-  displayGame();
+  document.getElementById("opening-game").style.display = "none";
+  document.getElementById("dropdown-boxes").style.display = "none";
+  document.getElementById("footer-main").style.display = "none";
+  setTimeout(() => {
+    displayGame();
+    document.querySelector('.main').classList.remove('spinner');
+  }, 2000);
+
+  
 };
 
 const replayGame = () => {
@@ -178,9 +185,6 @@ const replayGame = () => {
 
 const displayGame = () => {
   document.getElementById("questions-main").style.display = "block";
-  document.getElementById("opening-game").style.display = "none";
-  document.getElementById("dropdown-boxes").style.display = "none";
-  document.getElementById("footer-main").style.display = "none";
   document.getElementById("score-counter").style.display = "block";
 };
 
