@@ -120,7 +120,6 @@ ul {
   padding-top: 50px;
 }
 
-
 .button-style {
   color: #000000;
   margin: 5px;
@@ -149,7 +148,6 @@ ul {
   text-align: center;
   display: none;
   padding-top: 20px;
-  
 }
 
 #score-number {
@@ -186,7 +184,7 @@ ul {
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);
   -o-transform: rotate(360deg);
-  color:#2fb9c4;
+  color: #2fb9c4;
 }
 
 .slack {
@@ -208,7 +206,7 @@ ul {
   -webkit-transform: rotate(360deg);
   -moz-transform: rotate(360deg);
   -o-transform: rotate(360deg);
-  color:#2fb9c4;
+  color: #2fb9c4;
 }
 
 .landing-footer {
@@ -225,17 +223,17 @@ ul {
   background-color: #ff0000;
 }
 
-.modal-footer a{
- color: #ffffff!important;
+.modal-footer a {
+  color: #ffffff !important;
 }
 
 .spinner:before {
   content: "";
   box-sizing: border-box;
   position: absolute;
-  top:50%;
-  left:50%;
- 
+  top: 50%;
+  left: 50%;
+
   height: 80px;
   width: 80px;
   margin-top: -30px;
@@ -244,7 +242,6 @@ ul {
   border-top: 2px solid #ffffff;
   border-right: 2px solid #2fb9c4;
   animation: spinner 0.7s linear infinite;
-
 }
 @keyframes spinner {
   to {
@@ -252,28 +249,14 @@ ul {
   }
 }
 
-@media screen and (min-width:560px) {
+@media screen and (min-width: 560px) {
   .answer {
     font-size: 1rem;
     height: 150px;
     width: 250px;
-    margin-top: 25px
+    margin-top: 25px;
   }
 
-  #question {
-    font-size: 1.3rem;
-    padding: 200px 40px 20px 40px;
-  }
-  
-  #congrats-text {
-    padding-top: 400px;
-    font-size: 1.7rem;
-  }
-
-}
-
-
-@media screen and (min-width:768px) {
   #question {
     font-size: 1.3rem;
     padding: 200px 40px 20px 40px;
@@ -283,15 +266,26 @@ ul {
     padding-top: 400px;
     font-size: 1.7rem;
   }
-
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width: 768px) {
+  #question {
+    font-size: 1.3rem;
+    padding: 200px 40px 20px 40px;
+  }
+
+  #congrats-text {
+    padding-top: 400px;
+    font-size: 1.7rem;
+  }
+}
+
+@media screen and (min-width: 1280px) {
   #landing-text {
     font-size: 3rem;
   }
-  
-  #landing-sub{
+
+  #landing-sub {
     font-size: 1.3rem;
   }
   #instructions {
@@ -299,7 +293,7 @@ ul {
     font-weight: 300;
     font-size: 1.2rem;
   }
-  
+
   .instructions-list-text {
     color: #ffffff;
     font-size: 1.1rem;
@@ -318,7 +312,7 @@ ul {
     font-weight: 300;
     height: 150px;
     width: 350px;
-    margin-top: 25px
+    margin-top: 25px;
   }
 
   #congrats-text {
