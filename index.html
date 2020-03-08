@@ -67,7 +67,6 @@
         </div>
       </div>
     </section>
-
     <!--Form selection added for choice of category and difficulty-->
     <section id="dropdown-boxes">
       <div
@@ -76,21 +75,22 @@
         <div class="row">
           <div class="col-12 ">
             <form>
-            <select required class="form-control dropdown" id="categories" aria-label="choose a category" required>
+            <select required class="form-control dropdown" id="categories" aria-label="choose a category">
               <option>Choose a Category</option>
             </select>
-            <select required class="form-control dropdown" id="difficulty" aria-label="choose a difficulty" required>  
+            <select required class="form-control dropdown" id="difficulty" aria-label="choose a difficulty">  
               <option>Choose a Difficulty</option>
             </select>
             <div class="col-12">
               <button type="button" class="btn btn-light" onclick="startGame()" id="playAgain">Start!</button>
-            </form>
             </div>
+            </form>
           </div>
-        </div>
+          </div>
+          </div>
     </section>
     <!--modal for categories that are empty-->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="Notify user questions are empty" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenter" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -233,5 +233,5 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <script src="assets/js/game.js" charset="UTF-8"></script>
+    <script src="assets/js/game.js"></script>
 </html>

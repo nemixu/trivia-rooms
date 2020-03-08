@@ -49,7 +49,6 @@ ul {
   width: 350px;
 }
 
-
 #difficulty {
   width: 350px;
 }
@@ -260,12 +259,12 @@ ul {
     height: 150vh;
   }
 
-  #categories{
+  #categories {
     width: 280px;
   }
-  
+
   #difficulty {
-    width: 280px
+    width: 280px;
   }
   .answer {
     font-size: 0.7rem;
@@ -290,7 +289,6 @@ ul {
     font-weight: 300;
   }
 }
-
 
 @media screen and (min-width: 560px) {
   .answer {
