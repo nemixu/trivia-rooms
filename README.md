@@ -15,7 +15,6 @@ A deployed link to the website can be found [here](https://nemixu.github.io/triv
 
 ![Preview](link to follow)
 
-
 ## UX
 
 ### User Stories
@@ -28,14 +27,13 @@ The end user want to play a game that shows the correct answer even if the answe
 
 The user can use this application on their, mobile device, table and laptop / desktop.
 
-* As a user I want to play a game that has multiple topics
-* As a user I want the game to be easy to play and not difficult to navigate
-* As a user I want to be able to see the score I am currently on
-* As a user I want to be able to see the correct / incorrect answers when I click a selection
-* As a user I want to play the topic again once I have finished
-* As a user I want to be able play this game on multiple devices
-* As a user I want a friendly and relaxing game that has no time limit
-
+- As a user I want to play a game that has multiple topics
+- As a user I want the game to be easy to play and not difficult to navigate
+- As a user I want to be able to see the score I am currently on
+- As a user I want to be able to see the correct / incorrect answers when I click a selection
+- As a user I want to play the topic again once I have finished
+- As a user I want to be able play this game on multiple devices
+- As a user I want a friendly and relaxing game that has no time limit
 
 ### Strategy
 
@@ -60,7 +58,7 @@ The structure of this project is fairly straight forward, it is a single page ap
 
 #### Skeleton
 
-WireFrames: 
+WireFrames:
 
 [Landing page Mobile](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20mobile.png)
 [Landing page Tablet](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20tablet.png)
@@ -107,23 +105,60 @@ Features in this game
 
 ### Testing planning.
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+At the beginning of this project I knew I wanted a very linear game that would have few areas for a user to go in the wrong direction.
+I took into consideration the potential devices the end user would be using.
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+I planned testing on the below devices.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+Chrome tools.
+Iphone 4 (320 x 480)
+Iphone 5se (320 x 568)
+Iphone 6 up to iphone X (375 x 667, 414 x 736, 375 x 812)
 
-1. Contact form:
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
+Hand held device testing
+One plus 5
+One plus 6
+Iphone X max
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+Screen testing
+Laptop 15.6" (1920 x 1080)
+24" Desktop Screen (1920 x 1080)
+28" Desktop Screen (1920 x 1080)
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+[Lighthouse Audit result](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/MS2-audit.PNG)
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+### Implementation
+
+As this was my second project I had some prior experience testing with google chrome dev tools, light house and user testing with devices and trying out potential ways to break the application or cause it to fail in some way.
+
+I began testing from the smallest screen possible, although the application was designed for mobile (a special breakpoint needed to be added for the iphone 4 as it is the smallest device)
+The overal project was designed to be created using the mobile first approach and then scale upwards towards the larger scale screens and devices.
+
+Testing was done manually for this project.
+
+when you choose no category the form does not validate if it is a required field, this is a known issue with this project and I have been unable to resolve this issue wit the pressing time of submission however I have implemented something that both works for a form validator and if the array of questions returns empty, it pops up a modal stating there was an error and the user should choose a category.
+This solution does indeed help the user understand something is wrong and does not leave the user staring at a blank set of questions and answers on the page.
+
+On both mobile and desktop devices, a user was originally able to spam the answer box after they answered a question correctly or incorrectly, to stop this I added a feature via Jquery that disabled the button during the time it is applying the correct / incorrect class and a timeout function to handle how long it is disabled, this proved to be very beneficial and resolved the issue of users being able to spam the game and potentially breaking the game.
+
+An issue that was very difficult to overcome, from the api data some of the special characters that would be presented in the array of questions such as 's or & would not allow me to validate if the question was correct or not because it would not be and equal match of the answer displayed on the dom, I attempted many times during the process to try new decode or encode methods found on stackover flow and w3schools, but nothing would handle the input correctly. After noticing that when the question was displayed on the dom, the browser was already handling the encoding correctly so a quick fix was to add a hidden HTML element that passed in the correct answer and pull it back from the browser to check vs the correct answer a user clicked. This ended up working exactly to how I needed and got me out of a tough situation. This is something that was not part of the codeinstitute course content and was very difficult for a beginner to resolve.
+
+Testing was done in this order.
+
+1. Open site and click on a category and difficulty.
+2. Wait for questions to load then click on an answer (rinse and repeat until end of game).
+3. Click multiple times after answering a question to see if you could click multiple times (does not work due to fix implemented).
+4. Watch the counter increase after clicking a correct answer.
+5. Once the game has finished click one of the buttons to play again or get a new quiz.
+6. Click nav items to see if they direct to a new page.
+
+Testing on mobile devices for landscape was also done: this application was not approached for a landscape screen and would advise a user to not play the game that way as it may not provide the best visual appearance.
+
+A loading spinner was added to ensure smoother ux for a user as it would display sample questions before the data would come back from the promise. This in return adds a nice modern flare to the game whilst the user waits 2seconds for the questions to fully load.
+
+On mobile devices the game displays the game in a column order, question above with the answers following underneath.
+On a tablet device the game displays in a row of 2 and 2, 2 above and 2 below, this helps cover the screen area and makes the game easier to read for a user.
+On a desktop view it has the same display but increases the text size as the screen resolution is higher.
 
 ## Bugs and problems
 
@@ -139,11 +174,11 @@ The category ID's which have been removed are listed below
 
 - Issue with removing 6 empty objects from the array at categoryDropDown.append - this was proven to be an issue to write clean code without having four if statements. I wanted to try and have the cleanest solution possible for this problem. The .includes method was the best solution and provided clean code and more readable for someone reading.
 
-- Issues without shuffle it would always put the same answer down on the answer area, I adopted Fisher-Yates Shuffle algorithm to resolve this and it now randomizes
+- Issues without shuffle it would always put the same answer down on the answer area, I adopted Fisher-Yates Shuffle algorithm to resolve this and it now randomizes the questions and displays into the dom.
 
 - was unable to show a user the correct answer if they clicked the wrong answer, so to improve the user experience of the game I decided to add a class that would check inside an if statement.
 
-- Issue with the final 10th question, once a user clicks it does not apply the class due to being in the else statement with no further arguements. 
+- Issue with the final 10th question, once a user clicks it does not apply the class due to being in the else statement with no further arguements, this was resolved with a settimeout function for 1 and a half seconds.
 
 - Decoding issue with the api data e.g Mc Donald's would show McDonald%26%23039%3Bs, solution to this problem was created a hidden HTML element - pass it to the HTML element forcing the browser to correctly decode the characters for a later comparison
 
@@ -151,7 +186,15 @@ issues with symbols such as & not encoding correctly with the user of .innerTEXT
 
 Found issues during user testing, some of the Questions in the array and answers in the questionArray would have ('s, & ) in the string, this would prove difficult for some of the functions to not be able to validate if the question was correct or not. I will be attempting to resolve this issue using regex epressions.
 
+## Results and outcomes
 
+Problems with the app having good results on Iphone SE and Iphone 4, it is causing overflow which has since been resolved.
+
+Testing of site performance, best practices and seo score was done via Lighthouse and returned a score of
+94% Performance
+100% Accessibility
+93% Best practices
+88% Seo score
 
 ## Deployment
 
