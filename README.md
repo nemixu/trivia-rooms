@@ -247,6 +247,9 @@ To clone or run this project locally:
 - Original inspiration came from [JamesqQuick](https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript) this project helped me organise what was needed for example a question counter, empty array to push data into etc.
 - Spinner for game loading [Brad Traversy](https://www.youtube.com/watch?v=BxpjA9t4dJE).
 - bootstrap documentation [Modal popup](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
+- fontawesome was used for the favicions throughout the page [Font Awesome](https://fontawesome.com/).
+- Balsamiq for wireframes
+- w3schools for :hover classes
 
 ### Media
 
