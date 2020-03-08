@@ -91,8 +91,27 @@
           </div>
         </div>
     </section>
-    <!--Questions drop down-->
+    <!--modal for categories that are empty-->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="Notify user questions are empty" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Category Error</h5>
+          </div>
+          <div class="modal-body">
+            The Category you have chosen is currently unavailable, please choose another category or check back soon.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary">
+              <a href="index.html" target="_self">Choose a new category</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Spinner class-->
     <div class="main"></div>
+    <!--Questions drop down-->
     <section id="questions-main">
       <div
         class="container align-items-center justify-content-center text-center"

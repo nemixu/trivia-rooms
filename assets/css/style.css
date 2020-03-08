@@ -225,6 +225,10 @@ ul {
   background-color: #ff0000;
 }
 
+.modal-footer a{
+ color: #ffffff!important;
+}
+
 .spinner:before {
   content: "";
   box-sizing: border-box;

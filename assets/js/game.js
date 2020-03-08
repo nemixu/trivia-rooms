@@ -88,6 +88,9 @@ const getQuestions = () => {
 
 const setQuestionAndAnswers = () => {
   $(buttonOnClick).prop('disabled', false);
+  if (questionsArray.length === 0) {
+    $('#exampleModalCenter').modal('show');
+  }
   console.log("Questions array ", questionsArray);
   // Set the question html
   questions.innerHTML = questionsArray[currentQuestionSet].question;
@@ -172,7 +175,7 @@ const startGame = () => {
     document.querySelector('.main').classList.remove('spinner');
   }, 2000);
 
-  
+
 };
 
 const replayGame = () => {
