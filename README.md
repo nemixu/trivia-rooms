@@ -232,7 +232,7 @@ To clone or run this project locally:
 2. In the clone with https section, copy the clone url or download zip.
 3. In your local IDE open git bash.
 4. Change the current working directory to the location where you want the cloned directory to be made.
-5. Type git clone, and then paste the URL you coppiein step 2.
+5. Type git clone, and then paste the URL you copied in step 2.
    git clone https://github.com/nemixu/trivia-rooms.git
 6. Press Enter. Your local clone will be created.
 
