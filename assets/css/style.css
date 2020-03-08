@@ -49,11 +49,15 @@ ul {
   width: 350px;
 }
 
+
+#difficulty {
+  width: 350px;
+}
 #categories {
-  height: auto;
   overflow-x: hidden !important;
   overflow: scroll !important;
   margin-bottom: 10px;
+  width: 350px;
 }
 
 .form-boxes {
@@ -248,6 +252,45 @@ ul {
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 320px) {
+  body {
+    background: url(../images/grad.jpg) no-repeat center 75%;
+    background-size: cover;
+    height: 150vh;
+  }
+
+  #categories{
+    width: 280px;
+  }
+  
+  #difficulty {
+    width: 280px
+  }
+  .answer {
+    font-size: 0.7rem;
+    height: 60px;
+    width: 250px;
+    margin-top: 2px;
+  }
+
+  #question {
+    font-size: 1rem;
+    padding: 20px 10px 10px 10px;
+  }
+
+  #congrats-text {
+    padding-top: 400px;
+    font-size: 1.7rem;
+  }
+
+  #congrats-text {
+    padding-top: 80px;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+
 
 @media screen and (min-width: 560px) {
   .answer {
