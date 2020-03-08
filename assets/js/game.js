@@ -24,16 +24,13 @@ const fetchCategories = () => {
 };
 
 const populateDropDowns = data => {
-  console.log("Data in Dropdowns", data);
   const triviaCategories = data.trivia_categories;
   for (let i = 0; i < triviaCategories.length; i++) {
     if (!unwantedCategories.includes(triviaCategories[i].id)) {
       categoryDropDown.append(
         `<option value="${triviaCategories[i].id}">${triviaCategories[i].name}</option>`
       );
-    } else {
-      console.log("category ignored");
-    }
+    } 
   }
   diffArray.forEach(difficulty => {
     difficultyDropDown.append(
@@ -58,13 +55,12 @@ const shuffle = array => {
 };
 
 const getElementsByString = (str, tag) => {
-  // let enc_str = encodeURIComponent(str);
-  // console.log(decodeURI(enc_str));
   return Array.prototype.slice
     .call(document.getElementsByTagName(tag))
     .filter(el => el.textContent.trim() === str.trim());
 };
 
+// forcing the score to 0
 const setScore = newScore => {
   score = newScore;
   document.getElementById("score-number").innerHTML = newScore;
@@ -87,15 +83,13 @@ const getQuestions = () => {
 };
 
 const setQuestionAndAnswers = () => {
+  //disable button click during validation of answers
   $(buttonOnClick).prop('disabled', false);
+  //return a modal if array length is empty
   if (questionsArray.length === 0) {
     $('#exampleModalCenter').modal('show');
   }
-  console.log("Questions array ", questionsArray);
-  // Set the question html
   questions.innerHTML = questionsArray[currentQuestionSet].question;
-  console.log("Current Question", questionsArray[currentQuestionSet].question);
-  // combine all answers to display later
   const allAnswers = [
     questionsArray[currentQuestionSet].correct_answer,
     ...questionsArray[currentQuestionSet].incorrect_answers
@@ -108,9 +102,7 @@ const setQuestionAndAnswers = () => {
     index++;
     answer.innerHTML = shuffleArr[index - 1];
   });
-  console.log("ALL ANSWERS", allAnswers);
   questionCounter++;
-  console.log("questions counter", questionCounter);
 };
 
 const addClasses = (className, selectedAnswer, correctAnswer) => {
@@ -135,11 +127,10 @@ const getNextQuestion = (className, selectedAnswer) => {
       removeClasses(className, selectedAnswer, correctAnswer);
       currentQuestionSet++;
       setQuestionAndAnswers();
-    }, 1000);
+    }, 1500);
   } else {
     addClasses(className, selectedAnswer, correctAnswer);
     setTimeout(() => {
-      console.log("ending game");
       removeClasses(className, selectedAnswer, correctAnswer);
       endGame();
     }, 1500);
@@ -149,14 +140,10 @@ const getNextQuestion = (className, selectedAnswer) => {
 const checkAnswer = selectedAnswerNumber => {
   const selectedAnswer = $(`[data-number=${selectedAnswerNumber}]`)[0];
   if (selectedAnswer.innerText === realAnswer.innerText) {
-    console.log("Correct!");
-    console.log("this is the score", score);
     score += 1;
     setScore(score);
     getNextQuestion("correct-answer", selectedAnswer);
-
   } else {
-    console.log("Incorrect!");
     getNextQuestion("wrong-answer", selectedAnswer);
   }
 };
@@ -198,7 +185,6 @@ const endGame = () => {
   document.getElementById("score-counter").style.display = "none";
   document.getElementById("congrats-text").style.display = "block";
   let finalScoreText = `Congratulations your final score was ${score}/10`;
-  console.log(finalScoreText);
   document.getElementById("congrats-text").innerHTML = finalScoreText;
 
 };

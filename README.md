@@ -6,46 +6,97 @@ My project will be a trivia style Interactive site that is focused with the mobi
 The game will target a list of categories with multiple questions that are pulled from an API.
 The user can choose from 3 difficulties and play the game for the duration of the 10 questions.
 I have opted to not have a timer as I want the game to be enjoyable for the user and take their time whilst playing.
-The game will display the correct / incorrect answer on screen
+The game will display the correct / incorrect answer on screen.
+I have also chosen to only allow 10 questions per game.
+
+## Showcase
+
+A deployed link to the website can be found [here](https://nemixu.github.io/trivia-rooms/).
+
+![Preview](link to follow)
+
 
 ## UX
 
 ### User Stories
 
-The end user of this project is someone who wishes to play a relaxed game and test their general knowledge and potential 
+The end user of this project is someone who wishes to play a relaxed game and test their general knowledge and other topics.
+
+The game is aimed to be a relaxing and fun game that can also be played with friends on all types of devices.
+
+The end user want to play a game that shows the correct answer even if the answer they chose is wrong.
+
+The user can use this application on their, mobile device, table and laptop / desktop.
+
+* As a user I want to play a game that has multiple topics
+* As a user I want the game to be easy to play and not difficult to navigate
+* As a user I want to be able to see the score I am currently on
+* As a user I want to be able to see the correct / incorrect answers when I click a selection
+* As a user I want to play the topic again once I have finished
+* As a user I want to be able play this game on multiple devices
+* As a user I want a friendly and relaxing game that has no time limit
 
 
+### Strategy
 
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+#### User Needs.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
+The needs of the user is to fulfil the capabilites of using this application on their mobile and tablet devices. They need the information to be easily accessible and easy to digest.
 
-- As a user type, I want to perform an action, so that I can achieve a goal.
+#### Technical Capabilites
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+It is capable to do this project with the bootstrap framework in a timely manner and implemet features that the user needs. Manipulating the dom with both js and jquery proved to be the best option over loading new pages when a user interacts with the site.
+
+It was not possible to implement leader boards in this release due to time restrictions and was not planned in the original scope of the project, but is something to consider for future releases.
+
+#### Scope
+
+For my audience I want to present a fun and enjoyable game that is easy to digest and can be accessed on mobile devices and larger devices.
+If they enjoy the game they will continue to try new topics.
+
+#### Structure
+
+The structure of this project is fairly straight forward, it is a single page application that uses dom manipulation to display features and hide features per user clicks. If you choose a topic in the drop down menus it feels like you have been navigated to a new page, this is the natural flow I was aiming for as I dont want user experience to be damaged. I have structured the game that the user cannot become lost. It is start point - Choose a topic and a difficulty - Answer your set of questions - See your score - Choose to play again or a new topic.
+
+#### Skeleton
+
+WireFrames: 
+
+[Landing page Mobile](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20mobile.png)
+[Landing page Tablet](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20tablet.png)
+[Landing page Desktop](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20Desktop.png)
+[Game page Mobile](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Start%20page%20mobile.png)
+[Game page Tablet](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/start%20page%20tablet.png)
+[Game page Desktop](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Start%20Page%20Desktop.png)
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+Features in this game
 
 ### Existing Features
 
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
-
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
-
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+- Feature 1 - allows users to choose a category, by having them choose a category in the dropdown box.
+- Feature 2 - allows users to choose a difficulty, by having the choose a difficulty in the dropdown box.
+- Feature 3 - If a user chooses a category that has no information from the API it returns a modal explaining what happened.
+- Feature 4 - Displaying green and red colours on the buttons to show a user if they were correct or not.
+- Feature 5 - Score counter to show a user their current score.
+- Feature 6 - Display a final score and congratulations text.
+- Feature 7 - Allow a user to choose a new category or a new set of questions for the same category they originally chose.
+- Feature 8 - Loading spinner to notify the user their questions are being fetched and displayed.
+- Feature 9 - Footer links to follow me on github for future projects.
 
 ### Features Left to Implement
 
-- Another feature idea
+- Future Feature 1 - future release should have a section to store user local data and allow them to have a nickname and scoreboard.
+- Future Feature 2 - Share your score to friends via social media.
+- Future Feature 3 - Allow additional question numbers e.g 15 questions, 20 questions.
+- Future Feature 4 - Add a timer if the user chooses for a timed game.
 
 ## Technologies Used
 
 - HTML5
 - CSS3
-- Bootstrap v4.3.1
+- Bootstrap v4.4.1
 - ES6+ JavaScript
 - Google Chrome Dev tools for debugging
 - Google Light house for audits
