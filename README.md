@@ -60,12 +60,17 @@ The structure of this project is fairly straight forward, it is a single page ap
 
 WireFrames:
 
-[Landing page Mobile](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20mobile.png)
-[Landing page Tablet](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20tablet.png)
-[Landing page Desktop](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20Desktop.png)
-[Game page Mobile](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Start%20page%20mobile.png)
-[Game page Tablet](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/start%20page%20tablet.png)
-[Game page Desktop](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Start%20Page%20Desktop.png)
+[Landing page Mobile](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20mobile.png),
+
+[Landing page Tablet](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20tablet.png),
+
+[Landing page Desktop](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Landing%20page%20Desktop.png),
+
+[Game page Mobile](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Start%20page%20mobile.png),
+
+[Game page Tablet](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/start%20page%20tablet.png),
+
+[Game page Desktop](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Start%20Page%20Desktop.png),
 
 ## Features
 
@@ -127,6 +132,18 @@ Laptop 15.6" (1920 x 1080)
 
 [Lighthouse Audit result](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/MS2-audit.PNG)
 
+### Version control
+
+I have added this version control section to show the projects beginning as I created a new repository and ended up overwriting some of the master using gitbash for the first time. I switched from using gitpod to using vscode, hence the issues with some of the pushes.
+The Original project will show the early stages of the project and the second commit list will show half way through - the standard project commit list will show the end section.
+
+Apologies for how messy this section is but I wanted to ensure you seen the original commits from the start.
+
+Here is the original repository:
+[Original project](https://github.com/nemixu/Milestone-2)
+Here is link to the set of commits added before overwriting it with a push from my local machine
+[Second Commit list](https://github.com/nemixu/trivia-rooms/commits/d8daa825b5e8c69ab79b5d1110ab4067d7f5808d)
+
 ### Implementation
 
 As this was my second project I had some prior experience testing with google chrome dev tools, light house and user testing with devices and trying out potential ways to break the application or cause it to fail in some way.
@@ -186,6 +203,8 @@ issues with symbols such as & not encoding correctly with the user of .innerTEXT
 
 Found issues during user testing, some of the Questions in the array and answers in the questionArray would have ('s, & ) in the string, this would prove difficult for some of the functions to not be able to validate if the question was correct or not. I will be attempting to resolve this issue using regex epressions.
 
+Some of the api has no data in specific topics, so they have been removed, other categories may have some questions for easy and medium but not hard, so this is handled by checking if the questions array is 0 then display a modal to alert the user there is no questions and to check back or choose another category.
+
 ## Results and outcomes
 
 Problems with the app having good results on Iphone SE and Iphone 4, it is causing overflow which has since been resolved.
@@ -198,31 +217,47 @@ Testing of site performance, best practices and seo score was done via Lighthous
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+To deploy this page to github pages from the repository the following steps were taken:
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+1. Click the settings tab on the repository.
+2. Scroll down to the Github pages section.
+3. Under Source, click the drop-down menu and choose master branch.
+4. Give it time to load the repo onto the link provided.
+5. Go back to step 3 and copy or click the link provided.
 
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+To clone or run this project locally:
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+1. Under the repository name, click "clone or download".
+2. In the clone with https section, copy the clone url or download zip.
+3. In your local IDE open git bash.
+4. Change the current working directory to the location where you want the cloned directory to be made.
+5. Type git clone, and then paste the URL you coppiein step 2.
+ git clone https://github.com/nemixu/trivia-rooms.git
+ 6. Press Enter. Your local clone will be created.
+
+ Additionally if you have issues cloning this repo follow this link [Help with cloing a repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
 
 ## Credits
 
 ### Content
 
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- [Fisher-Yates shuffle](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) to randomize my questions
+- Original inspiration came from [JamesqQuick](https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript) this project helped me organise what was needed for example a question counter, empty array to push data into etc.
+- Spinner for game loading [Brad Traversy](https://www.youtube.com/watch?v=BxpjA9t4dJE).
+- bootstrap documentation [Modal popup](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
 
 ### Media
 
 - The api resource is used from the opensource API Open Trivia DB - https://opentdb.com/
 - Background Image was sourced from https://www.pexels.com/
--
 
 ### Acknowledgements
 
 - I received inspiration for this project from my Mentor Simen Daehlin who suggested doing a project like this.
 - Slack community for the help with small issues that I was overlooking.
-- Reggie Morgan (Senior Dev) who gave suggestions on best practices.
+- Reggie Morgan (Senior Dev) who gave suggestions on best practices and arrow functions and also user tested the game
+- Philip Kearney for user testing the game
+- Andrew Gorman user testing the game and helping break the game and improve ux.
 - Fisher-Yates Shuffle to shuffle the answers and place them in different formation
