@@ -242,7 +242,6 @@ Additionally if you have issues cloning this repo follow this link [Help with cl
 
 ### Content
 
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 - [Fisher-Yates shuffle](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array) to randomize my questions
 - Original inspiration came from [JamesqQuick](https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript) this project helped me organise what was needed for example a question counter, empty array to push data into etc.
 - Spinner for game loading [Brad Traversy](https://www.youtube.com/watch?v=BxpjA9t4dJE).
