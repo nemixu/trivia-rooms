@@ -13,8 +13,6 @@ I have also chosen to only allow 10 questions per game.
 
 A deployed link to the website can be found [here](https://nemixu.github.io/trivia-rooms/).
 
-![Preview](link to follow)
-
 ## UX
 
 ### User Stories
@@ -37,7 +35,7 @@ The user can use this application on their, mobile device, table and laptop / de
 
 ### Strategy
 
-#### User Needs.
+#### User Needs
 
 The needs of the user is to fulfil the capabilites of using this application on their mobile and tablet devices. They need the information to be easily accessible and easy to digest.
 
@@ -239,7 +237,7 @@ To clone or run this project locally:
 3. In your local IDE open git bash.
 4. Change the current working directory to the location where you want the cloned directory to be made.
 5. Type git clone, and then paste the URL you copied in step 2.
-   git clone https://github.com/nemixu/trivia-rooms.git
+   git clone [Clone link](https://github.com/nemixu/trivia-rooms.git)
 6. Press Enter. Your local clone will be created.
 
 Additionally if you have issues cloning this repo follow this link [Help with cloing a repo](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
