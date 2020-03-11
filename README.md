@@ -72,6 +72,12 @@ WireFrames:
 
 [Game page Desktop](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Start%20Page%20Desktop.png),
 
+[End page mobile](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/End%20screen%20moble.png),
+
+[End page Tablet](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/End%20screen%20tablet.png),
+
+[End page Desktop](https://github.com/nemixu/trivia-rooms/blob/master/assets/images/wireframes/Desktop%20end%20screen.png),
+
 ## Features
 
 Features in this game
@@ -252,8 +258,8 @@ Additionally if you have issues cloning this repo follow this link [Help with cl
 
 ### Media
 
-- The api resource is used from the opensource API Open Trivia DB - https://opentdb.com/
-- Background Image was sourced from https://www.pexels.com/
+- The api resource is used from the opensource API - [Open Trivia DB](https://opentdb.com/)
+- Background Image was sourced from [Pexels](https://www.pexels.com/)
 
 ### Acknowledgements
 
