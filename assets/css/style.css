@@ -52,6 +52,7 @@ ul {
 #difficulty {
   width: 350px;
 }
+
 #categories {
   overflow-x: hidden !important;
   overflow: scroll !important;
@@ -184,10 +185,10 @@ ul {
 }
 
 .github:hover {
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
+  transform: rotate(720deg);
+  -webkit-transform: rotate(720deg);
+  -moz-transform: rotate(720deg);
+  -o-transform: rotate(720deg);
   color: #2fb9c4;
 }
 
@@ -207,10 +208,10 @@ ul {
 }
 
 .slack:hover {
-  transform: rotate(360deg);
-  -webkit-transform: rotate(360deg);
-  -moz-transform: rotate(360deg);
-  -o-transform: rotate(360deg);
+  transform: rotate(720deg);
+  -webkit-transform: rotate(720deg);
+  -moz-transform: rotate(720deg);
+  -o-transform: rotate(720deg);
   color: #2fb9c4;
 }
 
@@ -248,9 +249,10 @@ ul {
   border-right: 2px solid #2fb9c4;
   animation: spinner 0.7s linear infinite;
 }
+
 @keyframes spinner {
   to {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
   }
 }
 
@@ -268,6 +270,7 @@ ul {
   #difficulty {
     width: 280px;
   }
+
   .answer {
     font-size: 0.7rem;
     height: 60px;
@@ -331,6 +334,7 @@ ul {
   #landing-sub {
     font-size: 1.3rem;
   }
+
   #instructions {
     color: #ffffff;
     font-weight: 300;
