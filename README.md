@@ -220,6 +220,8 @@ Testing of site performance, best practices and seo score was done via Lighthous
 93% Best practices
 88% Seo score
 
+[JavaScript code was validated via this link with 0 errors](https://www.piliapp.com/syntax-check/es6/)
+
 ## Deployment
 
 To deploy this page to github pages from the repository the following steps were taken:
