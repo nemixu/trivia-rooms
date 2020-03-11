@@ -296,6 +296,11 @@ ul {
 }
 
 @media screen and (min-width: 560px) {
+  body {
+    background: url(../images/grad.jpg) no-repeat center 75%;
+    background-size: cover;
+    height: 150vh;
+  }
   .answer {
     font-size: 1rem;
     height: 150px;
