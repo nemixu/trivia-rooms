@@ -185,10 +185,7 @@ ul {
 }
 
 .github:hover {
-  transform: rotate(720deg);
-  -webkit-transform: rotate(720deg);
-  -moz-transform: rotate(720deg);
-  -o-transform: rotate(720deg);
+  transform: scale(1.2);
   color: #2fb9c4;
 }
 
@@ -208,10 +205,7 @@ ul {
 }
 
 .slack:hover {
-  transform: rotate(720deg);
-  -webkit-transform: rotate(720deg);
-  -moz-transform: rotate(720deg);
-  -o-transform: rotate(720deg);
+  transform: scale(1.2);
   color: #2fb9c4;
 }
 
